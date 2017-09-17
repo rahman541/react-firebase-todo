@@ -6,12 +6,21 @@ import NoteForm from './NoteForm/NoteForm'
 class App extends Component {
   constructor (props) {
     super(props)
+    this.addNote = this.addNote.bind(this)
     this.state = {
       notes: [
         { id: 1, noteContent: 'Note 1' },
         { id: 2, noteContent: 'Note 2' }
       ]
     }
+  }
+
+  addNote (note) {
+    const previousNote = this.state.notes
+    previousNote.push({ id: previousNote.length+1, noteContent: note })
+    this.setState({
+      notes: previousNote
+    })
   }
 
   render() {
@@ -31,7 +40,7 @@ class App extends Component {
         </div>
 
         <div className="notesFooter">
-          <NoteForm />
+          <NoteForm addNote={this.addNote} />
         </div>
         
       </div>

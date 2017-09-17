@@ -20,6 +20,7 @@ class NoteForm extends Component {
 	}
 
 	writeNote () {
+		this.props.addNote(this.state.newNoteContent)
 		this.setState({
 			newNoteContent: ''
 		})
