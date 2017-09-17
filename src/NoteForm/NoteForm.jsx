@@ -13,7 +13,7 @@ class NoteForm extends Component {
 	}
 
 	handleUserInput (e) {
-		console.log(e.target.value)
+		console.log('User input: ', e.target.value)
 		this.setState({
 			newNoteContent: e.target.value,
 		})
@@ -33,7 +33,7 @@ class NoteForm extends Component {
 					onChange={this.handleUserInput}
 					value={this.state.newNoteContent}
 					/>
-				<button className="noteButton" onClick={this.writeNote>
+				<button className="noteButton" onClick={this.writeNote}>
 					Add Note
 				</button>
 			</div>
